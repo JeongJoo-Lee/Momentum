@@ -30,7 +30,7 @@ const quotes = [
     author: "앙드레 말로",
   },
   {
-    quote: "행복은 습관이다,그것을 몸에 지니라",
+    quote: "행복은 습관이다,그것을 몸에 지녀라",
     author: "허버드",
   },
   {
@@ -38,3 +38,11 @@ const quotes = [
     author: "제임스 딘",
   },
 ];
+
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
+
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
