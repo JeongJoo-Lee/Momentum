@@ -3,16 +3,19 @@ const API_KEY = "3549b0b54d0375e425d27c89077f570e";
 function onGeoSuccess(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=kr&units=metric`;
+  console.log(url);
   fetch(url)
     .then((res) => res.json())
     .then((res) => {
       const weather = document.querySelector("#weather span:first-child");
       const city = document.querySelector("#weather span:last-child");
-      weather.innerText = `${res.weather[0].main} / ${Math.floor(
+      weather.innerText = `${res.weather[0].main}  ${Math.floor(
         res.main.temp
-      )}도`;
+      )}˚`;
       city.innerText = res.name;
+      weather.id = "weather-info";
+      city.id = "city";
     });
 }
 

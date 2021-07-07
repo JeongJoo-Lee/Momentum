@@ -11,10 +11,13 @@ function onLoginSubmit(e) {
   const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY, username);
   paintGreetings(username);
+  toDoForm.style.display = "flex";
+  toDoList.style.display = "block";
+  clock.style.display = "block";
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `Hello, ${username} ❤`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   loginForm.classList.add(HIDDEN_CLASSNAME);
 }

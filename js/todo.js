@@ -29,8 +29,8 @@ function paintToDo(newToDo) {
   span.innerText = newToDo.text;
   const button = document.createElement("button");
   button.innerText = "❌";
-  li.appendChild(span);
   li.appendChild(button);
+  li.appendChild(span);
   button.addEventListener("click", deleteToDo);
   toDoList.appendChild(li);
 }
@@ -57,4 +57,9 @@ if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
+}
+
+if (localStorage.getItem("username") === null) {
+  toDoForm.style.display = "none";
+  toDoList.style.display = "none";
 }

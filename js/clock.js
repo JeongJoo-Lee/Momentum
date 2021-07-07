@@ -11,3 +11,7 @@ function getClock() {
 
 getClock(); // 1초뒤에 실행되기 전에 바로 실행시켜야 하기때문에 선언
 setInterval(getClock, 1000);
+
+if (localStorage.getItem("username") === null) {
+  clock.style.display = "none";
+}
