@@ -1,6 +1,6 @@
 # Momentum
 
-## 사용 언어
+## 사용 기술
 
 - VanilaJS
 
